@@ -1,5 +1,5 @@
 const __BROWSER__ = (typeof window === 'object');
-const profiler = !__BROWSER__ ? require('v8-profiler') : null;
+const profiler = !__BROWSER__ ? require('@risingstack/v8-profiler') : null;
 import v8natives from 'v8-natives';
 import mkdir from 'mkdirp';
 import Promise from 'bluebird';

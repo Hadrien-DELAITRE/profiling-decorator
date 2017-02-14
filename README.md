@@ -8,14 +8,14 @@ Use the following command in order to install this module
 npm install profiling-decorator
 ```
 
-This use [v8-profiler](https://www.npmjs.com/package/v8-natives) and [v8-natives](https://www.npmjs.com/package/v8-profiler) as dependencies.
+This use [v8-profiler](https://www.npmjs.com/package/@risingstack/v8-profiler) and [v8-natives](https://www.npmjs.com/package/v8-natives) as dependencies.
 
 ### Webpack support
 If you want use this module with the [webpack](https://webpack.github.io/) module bundler, you have to set the following configuration in `webpackConfig.js` file :
 
 ```javascript
 plugins: [
-  new webpack.IgnorePlugin(new RegExp('^(v8-profiler)$')),
+  new webpack.IgnorePlugin(/\bv8-profiler\b/),
 ],
 resolve: {
   alias: {
