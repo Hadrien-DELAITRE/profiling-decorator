@@ -28,7 +28,7 @@ function wrapNodeProfiling(fn, name) {
     profiler.startProfiling(profilerFile, true);
     profilings[profilerPath] = profilings[profilerPath] + 1;
     const resultFn = fn.apply(this, args);
-    if(resultFn !== void 0 && resultFn.then) {
+    if(resultFn !== void 0 && resultFn !== null && resultFn.then) {
       return Promise.resolve(resultFn).finally((value) => {
         const profilerStream = profiler.stopProfiling();
         profilerStream.export((error, result) => {
